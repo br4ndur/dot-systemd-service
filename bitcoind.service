@@ -1,0 +1,12 @@
+[Unit]
+Description=Bitcoin daemon service
+
+[Service]
+Type=forking
+User=%i
+ExecStart=/usr/bin/bitcoind -daemon
+KillSignal=SIGUSR2
+Restart=always
+
+[Install]
+WantedBy=default.target

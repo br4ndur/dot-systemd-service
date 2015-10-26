@@ -1,0 +1,12 @@
+[Unit]
+Description=Start offlineimap as a daemon
+Requires=gpg-agent.service
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/offlineimap
+KillSignal=SIGUSR2
+Restart=always
+
+[Install]
+WantedBy=default.target
